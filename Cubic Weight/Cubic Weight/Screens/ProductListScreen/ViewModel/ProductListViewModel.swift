@@ -71,7 +71,7 @@ class ProductListViewModel: ProductListViewModeling{
     }
     
     func getProductFromAPI() -> Observable<[Product]>{
-        //Create an observable of employee array here
+        //Create an observable of product array here
         return Observable.create { [weak self] observer in
             self?.networkService.getProducts(completionHandler: { (productArray, result) in
                 switch result{

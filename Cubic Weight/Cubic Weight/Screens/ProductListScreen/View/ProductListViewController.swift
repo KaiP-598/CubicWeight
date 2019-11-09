@@ -16,6 +16,7 @@ class ProductListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     var viewModel: ProductListViewModeling?
+    var shouldFetchMore = true
     
     private let disposeBag = DisposeBag()
     
@@ -30,6 +31,8 @@ class ProductListViewController: UIViewController {
         
         tableView.register(UINib(nibName: "ProductListTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "ProductListTableViewCell")
         
+        tableView.delegate = self
+        
     }
     
     func setupBinding(){
@@ -39,7 +42,7 @@ class ProductListViewController: UIViewController {
             return
         }
         
-        //Bind employees array observable to tableview
+        //Bind products array observable to tableview
         viewModel.airConditionersArray.bind(to: tableView.rx.items(cellIdentifier: "ProductListTableViewCell", cellType: ProductListTableViewCell.self)) { row, product, cell in
                 cell.configureCell(product: product)
             }.disposed(by: disposeBag)
@@ -53,6 +56,19 @@ class ProductListViewController: UIViewController {
         viewModel.getProducts.onNext(())
     }
 
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == tableView{
+            if (((scrollView.contentOffset.y + scrollView.frame.size.height) > (scrollView.contentSize.height - 200)) && shouldFetchMore){
+                shouldFetchMore = false
+                viewModel?.getProducts.onNext(())
+                print ("Hello")
+            }
+        }
+    }
+
+}
+
+extension ProductListViewController: UITableViewDelegate{
 
 }
 

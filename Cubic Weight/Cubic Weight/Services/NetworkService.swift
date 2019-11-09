@@ -23,13 +23,18 @@ protocol NetworkServicing {
 class NetworkService: NetworkServicing{
     
     let BASE_URL_END_POINT = "http://wp8m3he1wt.s3-website-ap-southeast-2.amazonaws.com"
-    var PRODUCT_URL = "/api/products/1"
+    var PRODUCT_URL: String? = "/api/products/1"
 
     /// Get all product listings data from the endpoint
     ///
     /// - parameter completionHandler: handler containing product array and network result.
     func getProducts(completionHandler: @escaping ([Product]?, NetworkError) -> ()) {
-        let finalEnpoint = BASE_URL_END_POINT + PRODUCT_URL
+        guard let productURL = PRODUCT_URL else {
+            completionHandler(nil, .failure)
+            return
+        }
+        
+        let finalEnpoint = BASE_URL_END_POINT + productURL
         
         Alamofire.request(finalEnpoint).responseJSON { [weak self] response in
             
