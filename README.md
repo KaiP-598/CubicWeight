@@ -21,4 +21,5 @@ An iOS App that allows you to see the average cubic weight of air conditioning r
 
 # Testing
 Unit tests are written to cover the major parts of the App
-<img src="https://firebasestorage.googleapis.com/v0/b/bredway-test-environment.appspot.com/o/to_be_deleted%2FCubic%20Weight%20Test.png?alt=media&token=1f1b62fd-9cbc-4aac-bbaa-eaa931589738" height="400" width="400">
+
+<img src="https://firebasestorage.googleapis.com/v0/b/bredway-test-environment.appspot.com/o/to_be_deleted%2FCubic%20Weight%20Test.png?alt=media&token=1f1b62fd-9cbc-4aac-bbaa-eaa931589738" height="400" width="340">
