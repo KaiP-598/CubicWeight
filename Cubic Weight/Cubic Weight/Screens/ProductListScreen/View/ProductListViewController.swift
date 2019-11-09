@@ -32,6 +32,7 @@ class ProductListViewController: UIViewController {
         tableView.register(UINib(nibName: "ProductListTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "ProductListTableViewCell")
         
         tableView.delegate = self
+        tableView.dataSource = self
         
     }
     
@@ -42,11 +43,14 @@ class ProductListViewController: UIViewController {
             return
         }
         
-        //Bind products array observable to tableview
-        viewModel.airConditionersArray.bind(to: tableView.rx.items(cellIdentifier: "ProductListTableViewCell", cellType: ProductListTableViewCell.self)) { row, product, cell in
-                cell.configureCell(product: product)
-            }.disposed(by: disposeBag)
+        viewModel.getAirConditionersSuccess
+            .subscribe(onNext: { [weak self] (_) in
+                self?.tableView.reloadData()
+                self?.shouldFetchMore = true
+            })
+            .disposed(by: disposeBag)
         
+        //Subscribe to average cubic weight and update label
         viewModel.averageCubicWeight
             .subscribe(onNext: { [weak self] (avgWeight) in
                 self?.averageCubicWeightLabel.text = "Current Avg Cubic Weight: " + avgWeight + "kg"
@@ -56,19 +60,43 @@ class ProductListViewController: UIViewController {
         viewModel.getProducts.onNext(())
     }
 
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView == tableView{
-            if (((scrollView.contentOffset.y + scrollView.frame.size.height) > (scrollView.contentSize.height - 200)) && shouldFetchMore){
+}
+
+extension ProductListViewController: UITableViewDelegate, UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let products = viewModel?.airConditionersArray{
+            return products.count
+        }
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let products = viewModel?.airConditionersArray{
+            let product = products[indexPath.row]
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "ProductListTableViewCell") as? ProductListTableViewCell {
+                cell.configureCell(product: product)
+                return cell
+            }
+        }
+        
+        return UITableViewCell()
+    }
+    
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let array = viewModel?.airConditionersArray{
+            let lastElement = array.count - 1
+            if indexPath.row == lastElement && shouldFetchMore {
                 shouldFetchMore = false
                 viewModel?.getProducts.onNext(())
-                print ("Hello")
+                debugPrint("Start to fetch more products")
             }
         }
     }
-
-}
-
-extension ProductListViewController: UITableViewDelegate{
-
+    
 }
 
