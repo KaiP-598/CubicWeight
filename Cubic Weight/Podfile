@@ -1,0 +1,25 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Cubic Weight' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Cubic Weight
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
+  pod 'ObjectMapper'
+  pod 'RxSwift', '~> 5'
+  pod 'RxCocoa', '~> 5'
+
+  target 'Cubic WeightTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Cubic WeightUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
