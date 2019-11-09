@@ -3,17 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1A1996FA23766C0100039533 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1996F923766C0100039533 /* AppDelegate.swift */; };
-		1A1996FC23766C0100039533 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1996FB23766C0100039533 /* ViewController.swift */; };
+		1A1996FC23766C0100039533 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1996FB23766C0100039533 /* ProductListViewController.swift */; };
 		1A1996FF23766C0100039533 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A1996FD23766C0100039533 /* Main.storyboard */; };
 		1A19970123766C0300039533 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A19970023766C0300039533 /* Assets.xcassets */; };
 		1A19970423766C0300039533 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A19970223766C0300039533 /* LaunchScreen.storyboard */; };
 		1A19970F23766C0300039533 /* Cubic_WeightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A19970E23766C0300039533 /* Cubic_WeightTests.swift */; };
 		1A19971A23766C0300039533 /* Cubic_WeightUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A19971923766C0300039533 /* Cubic_WeightUITests.swift */; };
+		1A19972923766E1A00039533 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A19972823766E1A00039533 /* NetworkService.swift */; };
+		1A1997302376753300039533 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A19972F2376753300039533 /* Product.swift */; };
+		1A199732237675D100039533 /* ProductSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A199731237675D100039533 /* ProductSize.swift */; };
+		1A19973423767E4D00039533 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A19973323767E4D00039533 /* ProductListViewModel.swift */; };
+		1A1997372376825800039533 /* ProductListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1997352376825800039533 /* ProductListTableViewCell.swift */; };
+		1A1997382376825800039533 /* ProductListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1997362376825800039533 /* ProductListTableViewCell.xib */; };
 		23BE87744C9625F45023DC8D /* Pods_Cubic_Weight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E74310533875250B0D94B275 /* Pods_Cubic_Weight.framework */; };
 		619CF72843E63755AC297C1B /* Pods_Cubic_WeightUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91BB87FBCAA97BA705670CA8 /* Pods_Cubic_WeightUITests.framework */; };
 		BB3306A147A496173109960A /* Pods_Cubic_WeightTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3249283612477CF3E3284B /* Pods_Cubic_WeightTests.framework */; };
@@ -39,7 +45,7 @@
 /* Begin PBXFileReference section */
 		1A1996F623766C0100039533 /* Cubic Weight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cubic Weight.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1996F923766C0100039533 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1A1996FB23766C0100039533 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1A1996FB23766C0100039533 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		1A1996FE23766C0100039533 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1A19970023766C0300039533 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A19970323766C0300039533 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,6 +56,12 @@
 		1A19971523766C0300039533 /* Cubic WeightUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cubic WeightUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A19971923766C0300039533 /* Cubic_WeightUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cubic_WeightUITests.swift; sourceTree = "<group>"; };
 		1A19971B23766C0300039533 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A19972823766E1A00039533 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		1A19972F2376753300039533 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		1A199731237675D100039533 /* ProductSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSize.swift; sourceTree = "<group>"; };
+		1A19973323767E4D00039533 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
+		1A1997352376825800039533 /* ProductListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewCell.swift; sourceTree = "<group>"; };
+		1A1997362376825800039533 /* ProductListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListTableViewCell.xib; sourceTree = "<group>"; };
 		3E1DCF03319EFB33C7627C4C /* Pods-Cubic Weight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cubic Weight.debug.xcconfig"; path = "Target Support Files/Pods-Cubic Weight/Pods-Cubic Weight.debug.xcconfig"; sourceTree = "<group>"; };
 		4D0A76A2F179DDB82BA7AC95 /* Pods-Cubic WeightUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cubic WeightUITests.debug.xcconfig"; path = "Target Support Files/Pods-Cubic WeightUITests/Pods-Cubic WeightUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F018DDDF47A1AE908C27BAF /* Pods-Cubic WeightTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cubic WeightTests.release.xcconfig"; path = "Target Support Files/Pods-Cubic WeightTests/Pods-Cubic WeightTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,8 +136,9 @@
 		1A1996F823766C0100039533 /* Cubic Weight */ = {
 			isa = PBXGroup;
 			children = (
+				1A19972A237674DB00039533 /* Screens */,
+				1A19972723766DDF00039533 /* Services */,
 				1A1996F923766C0100039533 /* AppDelegate.swift */,
-				1A1996FB23766C0100039533 /* ViewController.swift */,
 				1A1996FD23766C0100039533 /* Main.storyboard */,
 				1A19970023766C0300039533 /* Assets.xcassets */,
 				1A19970223766C0300039533 /* LaunchScreen.storyboard */,
@@ -152,6 +165,59 @@
 			path = "Cubic WeightUITests";
 			sourceTree = "<group>";
 		};
+		1A19972723766DDF00039533 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1A19972823766E1A00039533 /* NetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1A19972A237674DB00039533 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1A19972B237674E400039533 /* ProductListScreen */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		1A19972B237674E400039533 /* ProductListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				1A19972C237674F600039533 /* Model */,
+				1A19972E237674FE00039533 /* View */,
+				1A19972D237674FA00039533 /* ViewModel */,
+			);
+			path = ProductListScreen;
+			sourceTree = "<group>";
+		};
+		1A19972C237674F600039533 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1A19972F2376753300039533 /* Product.swift */,
+				1A199731237675D100039533 /* ProductSize.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1A19972D237674FA00039533 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1A19973323767E4D00039533 /* ProductListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1A19972E237674FE00039533 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1A1996FB23766C0100039533 /* ProductListViewController.swift */,
+				1A1997352376825800039533 /* ProductListTableViewCell.swift */,
+				1A1997362376825800039533 /* ProductListTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		57422A17473475EEA5A9A9C1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,7 +228,6 @@
 				4D0A76A2F179DDB82BA7AC95 /* Pods-Cubic WeightUITests.debug.xcconfig */,
 				9111F1AE6EFE866A3499DE95 /* Pods-Cubic WeightUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -275,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A19970423766C0300039533 /* LaunchScreen.storyboard in Resources */,
+				1A1997382376825800039533 /* ProductListTableViewCell.xib in Resources */,
 				1A19970123766C0300039533 /* Assets.xcassets in Resources */,
 				1A1996FF23766C0100039533 /* Main.storyboard in Resources */,
 			);
@@ -387,7 +453,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A1996FC23766C0100039533 /* ViewController.swift in Sources */,
+				1A1996FC23766C0100039533 /* ProductListViewController.swift in Sources */,
+				1A1997372376825800039533 /* ProductListTableViewCell.swift in Sources */,
+				1A1997302376753300039533 /* Product.swift in Sources */,
+				1A19973423767E4D00039533 /* ProductListViewModel.swift in Sources */,
+				1A19972923766E1A00039533 /* NetworkService.swift in Sources */,
+				1A199732237675D100039533 /* ProductSize.swift in Sources */,
 				1A1996FA23766C0100039533 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
