@@ -54,7 +54,7 @@ class ProductListViewController: UIViewController {
         //Subscribe to average cubic weight and update label
         viewModel.averageCubicWeight
             .subscribe(onNext: { [weak self] (avgWeight) in
-                self?.averageCubicWeightLabel.text = "Current Avg Cubic Weight: " + avgWeight + "kg"
+                self?.averageCubicWeightLabel.text = "Current Average Cubic Weight: " + avgWeight + "kg"
             })
             .disposed(by: disposeBag)
         
