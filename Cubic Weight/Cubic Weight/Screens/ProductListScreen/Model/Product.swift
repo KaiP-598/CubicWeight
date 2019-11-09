@@ -14,6 +14,17 @@ class Product: Mappable {
     var title: String?
     var weight: Double?
     var size: ProductSize?
+    var cubicWeight: Double {
+        get{
+            if let width = size?.width, let length = size?.length, let height = size?.height{
+                let widthInMeters = width * 0.01
+                let lengthInMeters = length * 0.01
+                let heightInMeters = height * 0.01
+                return widthInMeters * lengthInMeters * heightInMeters * 250
+            }
+            return 0
+        }
+    }
     
     init (){
         

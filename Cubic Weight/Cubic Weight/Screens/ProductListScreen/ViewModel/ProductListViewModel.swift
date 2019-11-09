@@ -15,6 +15,7 @@ protocol ProductListViewModeling {
     var allProducts: [Product] {get}
     var airConditionersArray: PublishSubject<[Product]> {get}
     var averageCubicWeight: PublishSubject<String> {get}
+    var sortAirConditioners: PublishSubject<Void> {get}
     
     func getProductFromAPI() -> Observable<[Product]>
     
@@ -27,6 +28,7 @@ class ProductListViewModel: ProductListViewModeling{
     var allProducts: [Product] = [Product]()
     var airConditionersArray: PublishSubject<[Product]> = PublishSubject<[Product]>()
     var averageCubicWeight: PublishSubject<String> = PublishSubject<String>()
+    var sortAirConditioners: PublishSubject<Void> = PublishSubject<Void>()
     
     private let disposeBag = DisposeBag()
     
@@ -47,7 +49,21 @@ class ProductListViewModel: ProductListViewModeling{
                     return
                 }
                 
-                strongSelf.allProducts = products
+                strongSelf.allProducts = strongSelf.allProducts + products
+                strongSelf.sortAirConditioners.onNext(())
+            })
+            .disposed(by: disposeBag)
+        
+        sortAirConditioners
+            .subscribe(onNext: { [weak self] (_) in
+                guard let strongSelf = self else {
+                    return
+                }
+                
+                let filteredArray = strongSelf.filterProductsByAirConditioners(products: strongSelf.allProducts)
+                strongSelf.airConditionersArray.onNext(filteredArray)
+                strongSelf.averageCubicWeight.onNext(strongSelf.getAverageCubicWeightOfProducts(products: filteredArray))
+                
             })
             .disposed(by: disposeBag)
         
@@ -76,7 +92,25 @@ class ProductListViewModel: ProductListViewModeling{
         }
     }
     
+    func filterProductsByAirConditioners(products: [Product]) -> [Product]{
+        return products.filter({ (product) -> Bool in
+            if let category = product.category{
+                if category.contains("Air Conditioners"){
+                    return true
+                } else {
+                    return false
+                }
+            } else {
+                return false
+            }
+        })
+    }
     
+    func getAverageCubicWeightOfProducts(products: [Product]) -> String{
+        let totalSum = products.map({$0.cubicWeight}).reduce(0, +)
+        let averageCubicWeight = totalSum / Double(products.count)
+        return String(format: "%.2f", averageCubicWeight)
+    }
     
     
 }

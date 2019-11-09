@@ -19,20 +19,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mYc-E9-RNg">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="75" width="414" height="787"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Avg Cubic Weight:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijv-8d-FWZ">
+                                <rect key="frame" x="10" y="44" width="404" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="RVP-gM-LBI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="mYc-E9-RNg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Kj0-9G-khb"/>
+                            <constraint firstItem="mYc-E9-RNg" firstAttribute="top" secondItem="ijv-8d-FWZ" secondAttribute="bottom" constant="10" id="9dj-BI-ova"/>
+                            <constraint firstItem="ijv-8d-FWZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Huk-tm-jHn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ijv-8d-FWZ" secondAttribute="trailing" id="U8L-xC-ULl"/>
                             <constraint firstItem="mYc-E9-RNg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Vde-XZ-kB4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mYc-E9-RNg" secondAttribute="bottom" id="j2q-VA-qIg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mYc-E9-RNg" secondAttribute="trailing" id="xHp-qu-oMM"/>
+                            <constraint firstItem="ijv-8d-FWZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ytb-v4-TO6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="averageCubicWeightLabel" destination="ijv-8d-FWZ" id="Blw-0P-Cve"/>
                         <outlet property="tableView" destination="mYc-E9-RNg" id="kxW-oZ-wfu"/>
                     </connections>
                 </viewController>
