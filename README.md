@@ -13,11 +13,12 @@ An iOS App that allows you to see the average cubic weight of air conditioning r
 4. The current average cubic weight will only display the average of the current listed products, as the product list updates, the average cubic weight will be updated accordingly.
 
 # How to run the App
-1. Download the file from GitHub
-2. Open file using Xcode
-3. Select a Simulator or a connected device in Xcode
-4. Select Automatically manage signing with your team and an unique Bundle Identifier
-5. Run the app
+1. Make sure you have latest Xcode and Swift 5
+2. Download the file from GitHub
+3. Open file using Xcode
+4. Select a Simulator or a connected device in Xcode
+5. Select Automatically manage signing with your team and an unique Bundle Identifier
+6. Run the app
 
 # Testing
 Unit tests are written to cover the major parts of the App
