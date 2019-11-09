@@ -43,6 +43,7 @@ class ProductListViewController: UIViewController {
             return
         }
         
+        //subscribe to getAirConditionersSuccess
         viewModel.getAirConditionersSuccess
             .subscribe(onNext: { [weak self] (_) in
                 self?.tableView.reloadData()
@@ -88,6 +89,7 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        //load more data when reach to the last displayed cell
         if let array = viewModel?.airConditionersArray{
             let lastElement = array.count - 1
             if indexPath.row == lastElement && shouldFetchMore {

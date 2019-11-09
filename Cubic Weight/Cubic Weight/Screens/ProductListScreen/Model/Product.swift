@@ -20,6 +20,7 @@ class Product: Mappable {
                 let widthInMeters = width * 0.01
                 let lengthInMeters = length * 0.01
                 let heightInMeters = height * 0.01
+                //250 is the industry standard cubic weight conversion factor
                 return widthInMeters * lengthInMeters * heightInMeters * 250
             }
             return 0

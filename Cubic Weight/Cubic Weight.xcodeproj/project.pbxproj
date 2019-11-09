@@ -20,6 +20,8 @@
 		1A19973423767E4D00039533 /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A19973323767E4D00039533 /* ProductListViewModel.swift */; };
 		1A1997372376825800039533 /* ProductListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1997352376825800039533 /* ProductListTableViewCell.swift */; };
 		1A1997382376825800039533 /* ProductListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1997362376825800039533 /* ProductListTableViewCell.xib */; };
+		1A19973B2376C44600039533 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A19973A2376C44600039533 /* MockNetworkService.swift */; };
+		1A19973F2376C58700039533 /* ProductListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A19973E2376C58700039533 /* ProductListTests.swift */; };
 		23BE87744C9625F45023DC8D /* Pods_Cubic_Weight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E74310533875250B0D94B275 /* Pods_Cubic_Weight.framework */; };
 		619CF72843E63755AC297C1B /* Pods_Cubic_WeightUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91BB87FBCAA97BA705670CA8 /* Pods_Cubic_WeightUITests.framework */; };
 		BB3306A147A496173109960A /* Pods_Cubic_WeightTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3249283612477CF3E3284B /* Pods_Cubic_WeightTests.framework */; };
@@ -62,6 +64,8 @@
 		1A19973323767E4D00039533 /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
 		1A1997352376825800039533 /* ProductListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewCell.swift; sourceTree = "<group>"; };
 		1A1997362376825800039533 /* ProductListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListTableViewCell.xib; sourceTree = "<group>"; };
+		1A19973A2376C44600039533 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
+		1A19973E2376C58700039533 /* ProductListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTests.swift; sourceTree = "<group>"; };
 		3E1DCF03319EFB33C7627C4C /* Pods-Cubic Weight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cubic Weight.debug.xcconfig"; path = "Target Support Files/Pods-Cubic Weight/Pods-Cubic Weight.debug.xcconfig"; sourceTree = "<group>"; };
 		4D0A76A2F179DDB82BA7AC95 /* Pods-Cubic WeightUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cubic WeightUITests.debug.xcconfig"; path = "Target Support Files/Pods-Cubic WeightUITests/Pods-Cubic WeightUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F018DDDF47A1AE908C27BAF /* Pods-Cubic WeightTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cubic WeightTests.release.xcconfig"; path = "Target Support Files/Pods-Cubic WeightTests/Pods-Cubic WeightTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 		1A19970D23766C0300039533 /* Cubic WeightTests */ = {
 			isa = PBXGroup;
 			children = (
+				1A19973C2376C56300039533 /* Screens */,
+				1A1997392376C42E00039533 /* MockServices */,
 				1A19970E23766C0300039533 /* Cubic_WeightTests.swift */,
 				1A19971023766C0300039533 /* Info.plist */,
 			);
@@ -216,6 +222,30 @@
 				1A1997362376825800039533 /* ProductListTableViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1A1997392376C42E00039533 /* MockServices */ = {
+			isa = PBXGroup;
+			children = (
+				1A19973A2376C44600039533 /* MockNetworkService.swift */,
+			);
+			path = MockServices;
+			sourceTree = "<group>";
+		};
+		1A19973C2376C56300039533 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1A19973D2376C56800039533 /* ProductListScreen */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		1A19973D2376C56800039533 /* ProductListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				1A19973E2376C58700039533 /* ProductListTests.swift */,
+			);
+			path = ProductListScreen;
 			sourceTree = "<group>";
 		};
 		57422A17473475EEA5A9A9C1 /* Pods */ = {
@@ -467,7 +497,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A19973B2376C44600039533 /* MockNetworkService.swift in Sources */,
 				1A19970F23766C0300039533 /* Cubic_WeightTests.swift in Sources */,
+				1A19973F2376C58700039533 /* ProductListTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
